@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction history
+{% endblock %}
+
+{% block main %}
+    <table class='table table-sm'>
+        <tr>
+            <th>Ticker</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Type</th>
+        </tr>
+        {% for row in history %}
+        <tr>
+            <td>{{ row['symbol'] }}</td>
+            <td>{{ '{0:0.2f}'.format(row['price']) }}</td>
+            <td>{{ row['amount'] }}</td>
+            <td>{{ row['type'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

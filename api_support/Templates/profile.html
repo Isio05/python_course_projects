@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>User Profile</title>
+</head>
+<body>
+{{ user.screen_name }}
+<form action="{{ url_for('search') }}">
+    <label for="q">Twitter search</label>
+    <input type="text" name="q" id="q" placeholder="Your Twitter search">
+    <button type="submit">Search</button>
+</form>
+</body>
+</html>

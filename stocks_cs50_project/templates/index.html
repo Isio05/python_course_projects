@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block main %}
+    <table class="table table-sm">
+        <tr>
+            <th>Ticker</th>
+            <th>Current price</th>
+            <th>Amount</th>
+            <th>Worth</th>
+        </tr>
+        {% for row in accounts %}
+        <tr>
+            <td>{{ row['symbol'].upper() }}</td>
+            <td>${{ '{0:0.2f}'.format(row['current_price']) }}</td>
+            <td>{{ row['amount'] }}</td>
+            <td>${{ '{0:0.2f}'.format(row['price']) }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="2">Cash:</td>
+            <td colspan="2">${{ '{0:0.2f}'.format(cash) }}</td>
+        </tr>
+        <tr>
+            <td colspan="2">Shares value</td>
+            <td colspan="2">${{ '{0:0.2f}'.format(total_shares) }}</td>
+        </tr>
+        <tr>
+            <td colspan="2">Grand total:</td>
+            <td colspan="2">${{ '{0:0.2f}'.format(total) }}</td>
+        </tr>
+    </table>
+{% endblock %}

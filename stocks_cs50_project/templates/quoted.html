@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock data
+{% endblock %}
+
+{% block main %}
+    Share of {{ data['name'] }} ({{ data['symbol'] }}) costs {{ '{0:0.2f}'.format(data['price']) }}
+{% endblock %}
